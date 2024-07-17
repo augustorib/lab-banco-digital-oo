@@ -68,5 +68,23 @@ public class AtendimentoEletronico {
         System.out.println();
     }
 
+    public void sacarDinheiroNoCaixa()
+    {
+        System.out.println("Informe o número da conta: ");
+        Scanner in = new Scanner(System.in);
+
+        int numeroConta = in.nextInt();
+
+        Conta conta = banco.getContaByNumero(numeroConta);
+
+        System.out.println("Informar a quantia para saque: ");
+        int saque = in.nextInt();
+
+        conta.sacar(saque);
+        System.out.println();
+        conta.imprimirExtrato();
+        System.out.println();
+    }
+
 }
 

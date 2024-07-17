@@ -61,6 +61,9 @@ public class Main {
 					 caixa.depositarDinheiroNoCaixa();
 					 break;
 				 case 3:
+					 caixa.sacarDinheiroNoCaixa();
+					 break;
+				 case 4:
 					 continuarAtendimento = false;
 					 break;
 				 default:
