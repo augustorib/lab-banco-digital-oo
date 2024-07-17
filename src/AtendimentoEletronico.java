@@ -86,5 +86,28 @@ public class AtendimentoEletronico {
         System.out.println();
     }
 
+    public void transferirDinheiroNoCaixa()
+    {
+        System.out.println("Informe o número da conta: ");
+        Scanner in = new Scanner(System.in);
+
+        int numeroConta = in.nextInt();
+        Conta conta = banco.getContaByNumero(numeroConta);
+
+
+        System.out.println("Informe o número da conta de destino: ");
+        int numeroContaDestino = in.nextInt();
+        Conta contaDestino = banco.getContaByNumero(numeroContaDestino);
+
+        System.out.println("Informe a quantia para transferência: ");
+        int valorTransferencia = in.nextInt();
+
+        conta.transferir(valorTransferencia, contaDestino);
+        System.out.println();
+        conta.imprimirExtrato();
+        System.out.println();
+        contaDestino.imprimirExtrato();
+        System.out.println();
+    }
 }
 
