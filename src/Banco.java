@@ -22,7 +22,18 @@ public class Banco {
 		this.contas = contas;
 	}
 
-	public void criarContaNoBanco(Conta conta){this.contas.add(conta);}
+	public void adicionarContaNoBanco(Conta conta){this.contas.add(conta);}
+
+	public Conta getContaByNumero(int numeroConta)
+	{
+		for(Conta conta : contas)
+		{
+			if(conta.getNumero() == numeroConta)
+				return conta;
+		}
+
+		return null;
+	}
 
 	public void listarContas()
 	{
